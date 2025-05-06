@@ -1,0 +1,7 @@
+.logo {
+  width: 500px;
+  @media screen and (max-width: 768px) {
+    align-self: flex-start;
+    width: 200px;
+  }
+}

@@ -1,10 +1,10 @@
 import React from "react";
-import Logo from "./Logo";
-import Nav from "./Nav";
+import Nav from "../Nav/Nav";
+import s from "./Header.module.css";
 
 const Header = () => {
   return (
-    <header>
+    <header className={s.header}>
       <Nav />
     </header>
   );
