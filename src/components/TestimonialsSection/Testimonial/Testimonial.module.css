@@ -1,0 +1,20 @@
+.testimonial {
+  width: 300px;
+  height: 400px;
+  color: lightgray;
+  padding: 2rem;
+}
+
+.testimonial:nth-of-type(2n + 1) {
+  background: #f4cd3e;
+}
+
+.testimonial:nth-of-type(2n) {
+  background: #485e56;
+}
+
+.testimonial_name {
+}
+
+.testimonial_text {
+}

@@ -1,0 +1,8 @@
+.testimonialsSection {
+  grid-column: 1/13;
+  margin-block: 1rem;
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+}
