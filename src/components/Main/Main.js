@@ -3,6 +3,7 @@ import HeroSection from "../HeroSection/HeroSection";
 import s from "./Main.module.css";
 import SpecialsSection from "../SpecialsSection/SpecialsSection";
 import TestimonialsSection from "../TestimonialsSection/TestimonialsSection";
+import BookingSection from "../BookingSection/BookingSection";
 
 const Main = () => {
   return (
@@ -10,6 +11,7 @@ const Main = () => {
       <HeroSection />
       <SpecialsSection />
       <TestimonialsSection />
+      <BookingSection />
     </main>
   );
 };

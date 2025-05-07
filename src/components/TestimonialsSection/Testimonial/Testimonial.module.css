@@ -1,20 +1,44 @@
 .testimonial {
   width: 300px;
-  height: 400px;
+  height: auto;
+  min-height: 300px;
   color: lightgray;
   padding: 2rem;
+  position: relative;
+}
+
+.testimonial_pin {
+  position: absolute;
+  top: -1.5rem;
+  left: calc(50% - 2rem);
+  width: 3rem;
+  height: 3rem;
+  transform: rotate(8deg);
 }
 
 .testimonial:nth-of-type(2n + 1) {
   background: #f4cd3e;
+  transform: rotate(-1.5deg);
+  color: #485e56;
 }
 
 .testimonial:nth-of-type(2n) {
   background: #485e56;
+  color: #f4cd3e;
+  transform: rotate(3.5deg);
+}
+
+.testimonial:nth-of-type(3) {
+  transform: rotate(-2deg);
 }
 
 .testimonial_name {
+  font-weight: bold;
+  font-size: 1.8rem;
 }
 
 .testimonial_text {
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
+  line-height: 2rem;
 }

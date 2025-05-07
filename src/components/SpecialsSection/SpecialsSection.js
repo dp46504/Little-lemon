@@ -7,11 +7,18 @@ import p1 from "../../assets/icons_assets/greek_salad.png";
 import p2 from "../../assets/icons_assets/bread.png";
 import p3 from "../../assets/icons_assets/tuna.png";
 import p4 from "../../assets/icons_assets/cutlet.png";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const SpecialsSection = () => {
   const [special, setSpecial] = React.useState(0);
 
   const specials = [
+    {
+      title: "Tuna Tatare",
+      description:
+        "Our Tuna Tartare features finely diced, fresh raw tuna, delicately seasoned and often mixed with ingredients like avocado, soy sauce, sesame oil, and scallions. A light and flavorful appetizer",
+      image: p3,
+    },
     {
       title: "Greek Salad",
       description:
@@ -23,12 +30,6 @@ const SpecialsSection = () => {
       description:
         "Our Bread Selection offers a delightful assortment of freshly baked breads, perfect for accompanying your meal or enjoying on its own. Each piece is chosen for its unique flavor and texture, providing a satisfying start to your dining experience.",
       image: p2,
-    },
-    {
-      title: "Tuna Tatare",
-      description:
-        "Our Tuna Tartare features finely diced, fresh raw tuna, delicately seasoned and often mixed with ingredients like avocado, soy sauce, sesame oil, and scallions. A light and flavorful appetizer",
-      image: p3,
     },
     {
       title: "Chineese Chicken Cutlet",
@@ -46,17 +47,20 @@ const SpecialsSection = () => {
   };
 
   return (
-    <article id="special-section" className={s.specialsSection}>
-      <FaArrowAltCircleLeft
-        className={`${s.specialsButton} ${s.specialsButtonLeft}`}
-        onClick={scrollLeft}
-      />
-      <FaArrowAltCircleRight
-        className={`${s.specialsButton} ${s.specialsButtonRight}`}
-        onClick={scrollRight}
-      />
-      <SpecialsItem data={specials[special]} />
-    </article>
+    <>
+      <SectionTitle text="Specials" />
+      <article id="special-section" className={s.specialsSection}>
+        <FaArrowAltCircleLeft
+          className={`${s.specialsButton} ${s.specialsButtonLeft}`}
+          onClick={scrollLeft}
+        />
+        <FaArrowAltCircleRight
+          className={`${s.specialsButton} ${s.specialsButtonRight}`}
+          onClick={scrollRight}
+        />
+        <SpecialsItem data={specials[special]} />
+      </article>
+    </>
   );
 };
 
