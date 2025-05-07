@@ -1,8 +1,6 @@
-.header {
+.specialsSection {
   grid-column: 1/13;
   @media screen and (max-width: 768px) {
     grid-column: 1/7;
-    margin: 0 auto;
-    width: 100%;
   }
 }

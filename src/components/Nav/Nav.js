@@ -3,6 +3,7 @@ import Logo from "../Logo/Logo";
 import s from "./Nav.module.css";
 import burger from "../../assets/icons_assets/burger-bar.png";
 import Drawer from "../Drawer/Drawer";
+import { Link } from "react-router";
 
 const Nav = () => {
   const links = [
@@ -12,11 +13,11 @@ const Nav = () => {
     },
     {
       name: "About",
-      url: "/",
+      url: "/about",
     },
     {
       name: "Menu",
-      url: "/",
+      url: "/menu",
     },
   ];
 
@@ -41,9 +42,9 @@ const Nav = () => {
 
   const linksList = links.map((link) => (
     <li key={link.name} className={s.navItem}>
-      <a className={s.link} href={link.url}>
+      <Link className={s.link} to={link.url}>
         {link.name}
-      </a>
+      </Link>
     </li>
   ));
 

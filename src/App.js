@@ -1,15 +1,14 @@
+import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header/Header";
-import Main from "./components/Main";
+import MainPage from "./views/MainPage";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
