@@ -1,6 +1,29 @@
 .specialsSection {
   grid-column: 1/13;
+  position: relative;
+  width: 80%;
+  transition: all 0.2s ease-in-out;
+
   @media screen and (max-width: 768px) {
     grid-column: 1/7;
+    width: 100%;
   }
+}
+
+.specialsButton {
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  z-index: 10;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 2rem;
+  color: #485e56;
+}
+.specialsButtonLeft {
+  left: 1rem;
+}
+.specialsButtonRight {
+  right: 1rem;
 }
