@@ -4,6 +4,7 @@ import s from "./Nav.module.css";
 import burger from "../../assets/icons_assets/burger-bar.png";
 import Drawer from "../Drawer/Drawer";
 import { HashLink as Link } from "react-router-hash-link";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Nav = () => {
   const links = [
@@ -54,12 +55,10 @@ const Nav = () => {
         <ul className={s.navList}>{linksList}</ul>
       ) : (
         <>
-          <img
-            src={burger}
+          <RxHamburgerMenu
             onClick={handleBurgerClick}
-            alt="burger-menu-icon"
             className={s.burger}
-          ></img>
+          ></RxHamburgerMenu>
           <Drawer open={drawerOpen} setDrawerOpen={setDrawerOpen}>
             {linksList}
           </Drawer>

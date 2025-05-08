@@ -8,18 +8,24 @@
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  @media screen and (max-width: 768px) {
+    gap: 1.5rem;
+  }
 }
 
 .text:nth-of-type(2n + 1) {
-  /* od lewej */
-  align-self: flex-start;
-  padding-left: 30%;
+  @media screen and (min-width: 769px) {
+    align-self: flex-start;
+    padding-left: 30%;
+  }
 }
 
 .text:nth-of-type(2n) {
-  /* od prawej */
-  align-self: flex-end;
-  padding-right: 30%;
+  @media screen and (min-width: 769px) {
+    /* od prawej */
+    align-self: flex-end;
+    padding-right: 30%;
+  }
 }
 
 .text::before {
@@ -32,6 +38,7 @@
   left: -14rem;
   background-color: #485e56;
   @media screen and (max-width: 768px) {
+    display: none;
     width: 5rem;
     left: -7rem;
   }
@@ -47,6 +54,7 @@
   right: -14rem;
   background-color: #485e56;
   @media screen and (max-width: 768px) {
+    display: none;
     width: 5rem;
     right: -7rem;
   }

@@ -5,6 +5,11 @@
   color: lightgray;
   padding: 2rem;
   position: relative;
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    min-height: 200px;
+    padding: 2rem;
+  }
 }
 
 .testimonial_pin {
