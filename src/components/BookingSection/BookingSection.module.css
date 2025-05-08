@@ -1,0 +1,36 @@
+.bookingForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.horizontalInputGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.formInput {
+  width: 100%;
+  height: 3.5rem;
+}
+
+.submitButton {
+  margin-top: 4rem;
+}
