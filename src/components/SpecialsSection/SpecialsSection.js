@@ -8,6 +8,7 @@ import p2 from "../../assets/icons_assets/bread.png";
 import p3 from "../../assets/icons_assets/tuna.png";
 import p4 from "../../assets/icons_assets/cutlet.png";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import { LuFence } from "react-icons/lu";
 
 const SpecialsSection = () => {
   const [special, setSpecial] = React.useState(0);
@@ -48,7 +49,7 @@ const SpecialsSection = () => {
 
   return (
     <>
-      <SectionTitle text="Specials" />
+      <SectionTitle text="Specials" sectionId="specials-section" />
       <article id="special-section" className={s.specialsSection}>
         <FaArrowAltCircleLeft
           className={`${s.specialsButton} ${s.specialsButtonLeft}`}

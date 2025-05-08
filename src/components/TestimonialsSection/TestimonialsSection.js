@@ -24,7 +24,7 @@ const TestimonialsSection = () => {
 
   return (
     <>
-      <SectionTitle text="Testimonials" />
+      <SectionTitle text="Testimonials" sectionId="testimonials-section" />
       <article className={s.testimonialsSection}>
         {testimonials.map((testimonial) => (
           <Testimonial key={testimonial.text} data={testimonial} />

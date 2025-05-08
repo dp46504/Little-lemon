@@ -1,29 +1,28 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import Logo from "../Logo/Logo";
 import s from "./Nav.module.css";
 import burger from "../../assets/icons_assets/burger-bar.png";
 import Drawer from "../Drawer/Drawer";
-import { Link } from "react-router";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Nav = () => {
   const links = [
     {
-      name: "Home",
-      url: "/",
+      name: "Specials",
+      url: "/#specials-section",
     },
     {
-      name: "About",
-      url: "/about",
+      name: "Testimonials",
+      url: "/#testimonials-section",
     },
     {
-      name: "Menu",
-      url: "/menu",
+      name: "Book a table",
+      url: "/#book-a-table-section",
     },
   ];
 
   const [innerWidth, setInnerWidth] = React.useState(window.innerWidth);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
-  const navListRef = React.useRef(null);
 
   React.useEffect(() => {
     const handleResize = () => {
