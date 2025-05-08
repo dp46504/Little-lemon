@@ -1,17 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import s from "./BookingSection.module.css";
-import Input from "@mui/joy/Input";
-import Select from "@mui/joy/Select";
-import Option from "@mui/joy/Option";
+// import Input from "@mui/joy/Input";
 import FormLabel from "@mui/joy/FormLabel";
-import { Button } from "@mui/joy";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import Button from "@mui/material/Button";
+import { useFormik } from "formik";
+import { ReservationsContext } from "../../providers/ReservationsProvider";
 
 const BookingSection = () => {
+  const { state: reservationsState, dispatch: reservationsDispatch } =
+    useContext(ReservationsContext);
+
+  const formik = useFormik({
+    initialValues: {
+      resDate: "",
+      resTime: 17,
+      guests: 1,
+      occasion: "bithday",
+    },
+    onSubmit: (values) => {
+      reservationsDispatch({
+        type: "ADD_RESERVATION",
+        resDate: values.resDate,
+        resTime: values.resTime,
+        guests: values.guests,
+        occasion: values.occasion,
+      });
+    },
+  });
+
   return (
     <>
       <SectionTitle sectionId="book-a-table-section" text="Book a table !" />
-      <form className={s.bookingForm}>
+      <form className={s.bookingForm} onSubmit={formik.handleSubmit}>
         <div className={s.inputGroup}>
           <FormLabel
             sx={{ fontSize: "1.5rem", color: "#485E56", fontWeight: "bold" }}
@@ -20,9 +44,13 @@ const BookingSection = () => {
           >
             Choose date
           </FormLabel>
-          <Input className={s.formInput} type="date" id="res-date" />
+          <OutlinedInput
+            {...formik.getFieldProps("resDate")}
+            className={s.formInput}
+            type="date"
+            id="res-date"
+          />
         </div>
-
         <div className={s.inputGroup}>
           <FormLabel
             sx={{ fontSize: "1.5rem", color: "#485E56", fontWeight: "bold" }}
@@ -31,25 +59,36 @@ const BookingSection = () => {
           >
             Choose time
           </FormLabel>
-          <Select className={s.formInput} id="res-time">
-            <Option value={17}>17:00</Option>
-            <Option value={18}>18:00</Option>
-            <Option value={19}>19:00</Option>
-            <Option value={20}>20:00</Option>
-            <Option value={21}>21:00</Option>
-            <Option value={22}>22:00</Option>
+
+          <Select
+            variant="outlined"
+            className={s.formInput}
+            id="res-time"
+            {...formik.getFieldProps("resTime")}
+          >
+            <MenuItem value={17}>17:00</MenuItem>
+            <MenuItem value={18}>18:00</MenuItem>
+            <MenuItem value={19}>19:00</MenuItem>
+            <MenuItem value={20}>20:00</MenuItem>
+            <MenuItem value={21}>21:00</MenuItem>
+            <MenuItem value={22}>22:00</MenuItem>
           </Select>
         </div>
         <div className={s.horizontalInputGroup}>
           <div className={s.inputGroup}>
             <FormLabel
-              sx={{ fontSize: "1.5rem", color: "#485E56", fontWeight: "bold" }}
+              sx={{
+                fontSize: "1.5rem",
+                color: "#485E56",
+                fontWeight: "bold",
+              }}
               className={s.formLabel}
               htmlFor="guests"
             >
               Number of guests
             </FormLabel>
-            <Input
+            <OutlinedInput
+              {...formik.getFieldProps("guests")}
               className={s.formInput}
               type="number"
               placeholder="1"
@@ -60,15 +99,24 @@ const BookingSection = () => {
           </div>
           <div className={s.inputGroup}>
             <FormLabel
-              sx={{ fontSize: "1.5rem", color: "#485E56", fontWeight: "bold" }}
+              sx={{
+                fontSize: "1.5rem",
+                color: "#485E56",
+                fontWeight: "bold",
+              }}
               className={s.formLabel}
               htmlFor="occasion"
             >
               Occasion
             </FormLabel>
-            <Select className={s.formInput} id="occasion">
-              <Option value="bithday">Birthday</Option>
-              <Option value="anniversary">Anniversary</Option>
+            <Select
+              variant="outlined"
+              {...formik.getFieldProps("occasion")}
+              className={s.formInput}
+              id="occasion"
+            >
+              <MenuItem value="bithday">Birthday</MenuItem>
+              <MenuItem value="anniversary">Anniversary</MenuItem>
             </Select>
           </div>
         </div>
@@ -76,12 +124,16 @@ const BookingSection = () => {
         <Button
           sx={{
             background: "#485E56",
-            padding: "1.4rem",
+            padding: window.innerWidth > 768 ? "1.4rem" : "3rem",
             fontSize: "1.25rem",
-            marginTop: "1.5rem",
+            marginTop: window.innerWidth > 768 ? ".5rem" : "0",
+            color: "#fff",
+            fontWeight: "bold",
+            textTransform: "capitalize",
+            borderRadius: "0.5rem",
             ":hover": { background: "rgb(35, 46, 42)" },
           }}
-          className={`${s.formInput}`}
+          className={`${s.formInput} `}
           type="submit"
         >
           Make Your reservation
