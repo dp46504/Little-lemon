@@ -1,7 +1,6 @@
-import React, { use, useEffect } from "react";
+import React from "react";
 import Logo from "../Logo/Logo";
 import s from "./Nav.module.css";
-import burger from "../../assets/icons_assets/burger-bar.png";
 import Drawer from "../Drawer/Drawer";
 import { HashLink as Link } from "react-router-hash-link";
 import { RxHamburgerMenu } from "react-icons/rx";
