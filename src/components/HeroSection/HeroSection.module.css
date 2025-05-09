@@ -1,48 +1,111 @@
 .hero {
   position: relative;
-  background-image: url("../../assets/icons_assets/restaurant.jpg");
   background-size: cover;
   background-position: center center;
-  min-height: 400px;
+  min-height: 50vh;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
-  overflow-x: hidden;
+  overflow: hidden;
+  @media screen and (max-width: 1200px) {
+    min-height: 35vh;
+  }
   @media screen and (max-width: 768px) {
-    min-height: 200px;
+    min-height: 30vh;
   }
 }
 
-.hero_cta {
+.hero_img {
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.hero_img1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20vw;
+  object-fit: contain;
+  aspect-ratio: 1;
+}
+
+.hero_img2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 25%;
+  object-fit: contain;
+  aspect-ratio: 1;
+}
+
+.hero_cta_container {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-  width: 50%;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  color: white;
-  font-weight: bold;
-  font-size: xx-large;
-  background: #495e57;
-  padding: 2rem;
-  line-height: 2.4rem;
-  letter-spacing: 0.05rem;
+  justify-content: space-between;
+  width: 40%;
   transition: all 0.2s ease-in-out;
-  @media screen and (max-width: 768px) {
-    width: 95%;
-    margin: 1rem auto;
-    font-size: x-large;
-    padding: 1rem;
-    line-height: 2rem;
-    text-align: center;
-    background: #495e57dd;
+  gap: 2rem;
+  @media screen and (max-width: 1200px) {
+    width: 90%;
   }
 }
 
-.hero_button {
+.hero_cta_text {
+  color: #485e56;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 3.8rem;
+  letter-spacing: 0.08rem;
+  @media screen and (max-width: 1200px) {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+}
+
+.highlight {
+  display: inline-block;
+  color: #f4ce14;
+  background: #485e56;
+  padding-inline: 1rem;
+}
+
+.click_word {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-block: 0.1rem;
+  padding-inline: 1rem;
+  margin: 1rem;
+  border: 0.3rem solid #485e56;
+  border-top: 0.1rem solid #485e56;
+  border-left: 0.1rem solid #485e56;
+  color: #485e56;
+  text-decoration: none;
+}
+
+.cursor_icon {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -2.5rem;
+  transform: rotate(-90deg);
+  z-index: 100;
+}
+
+.underline {
+  position: relative;
+  text-decoration: underline #f4ce14;
+  text-decoration-thickness: 0.35rem;
+  text-underline-offset: 0.4rem;
+}
+
+.hero_cta_button {
   background: #f4ce14;
   color: #333;
   padding: 1rem 2rem;
@@ -51,6 +114,11 @@
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   border: none;
+  width: fit-content;
+
+  @media screen and (max-width: 1200px) {
+    font-size: x-large;
+  }
   &:hover {
     background: #333;
     color: #f4ce14;
